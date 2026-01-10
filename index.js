@@ -14,6 +14,14 @@ app.get('/', (req, res) => {
   res.send('Category Service Jalan');
 });
 
+db.connect((err) => {
+  if (err) {
+    console.error('DB connection failed:', err);
+  } else {
+    console.log('Database category connected');
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Category Service running di port ${PORT}`);
 });
